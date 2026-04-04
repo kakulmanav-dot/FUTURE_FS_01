@@ -1,12 +1,11 @@
 import React from "react";
 import myImage from "../assets/myImage.jpeg";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 
 function About() {
   return (
     <section
-      className="relative py-2 w-full min-h-screen overflow-hidden bg-black pointer-events-none"
+      className="relative py-2 w-full min-h-screen overflow-hidden bg-black "
       id="about"
     >
       {/* Background blobs */}
@@ -80,18 +79,18 @@ function About() {
             viewport={{ amount: 0.5 }}
             transition={{ duration: 0.8, delay: 0.5 }}
           >
-            <Link
-              to="/projects" onMouseMove={()=> {console.log("hello")}}
-              className="bg-white rounded text-black z-100 px-5 py-2 hover:scale-105 transition-all duration-300 inline-block"
+            <a
+              href="#projects" 
+              className="bg-white rounded text-black z-200 px-5 py-2 hover:scale-105 transition-all duration-300 inline-block"
             >
               View Projects
-            </Link>
-            <Link
-              to="/contact"
-              className="bg-transparent border z-100 rounded text-white px-5 py-2 hover:scale-105 transition-all duration-300 inline-block"
+            </a>
+            <a
+              href="#contact"
+              className="bg-transparent border z-200 rounded text-white px-5 py-2 hover:scale-105 transition-all duration-300 inline-block"
             >
               Get in Touch
-            </Link>
+            </a>
           </motion.div>
         </motion.div>
       </div>
