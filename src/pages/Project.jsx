@@ -1,12 +1,13 @@
 import React, { useEffect, useMemo, useState, useRef } from "react";
 import header_img from "../assets/header_img.png";
 import hero from "../assets/hero3.png";
+import Forever from "../assets/Forvever.png";
 import project_img_2 from "../assets/project_img_2.jpg";
 import { useMotionValueEvent, useScroll } from "framer-motion";
 import gallery from "../assets/gallery-3.png";
 import { AnimatePresence ,motion} from "framer-motion";
 
-// ✅ Fix 1 — renamed to useIsMobile
+
 const useIsMobile = (query = "(max-width: 639px)") => {
   const [isMobile, setIsMobile] = useState(
     typeof window !== "undefined" && window.matchMedia(query).matches,
@@ -25,7 +26,7 @@ const useIsMobile = (query = "(max-width: 639px)") => {
 };
 
 function Project() {
-  // ✅ 
+  
   const isMobile = useIsMobile();
   const sceneRef = useRef();
 
@@ -33,32 +34,38 @@ function Project() {
     () => [
       {
         title: "Real Estate",
-        link: "https://real-estate66.vercel.app/",
+        link: "https://real-estate66.vercel.app",
         bgcolor: "#6c3573",
         image: isMobile ? project_img_2 : header_img,
       },
       {
         title: "Edusity",
-        link: "https://educity-t9jo.vercel.app/",
+        link: "https://educity-t9jo.vercel.app",
         bgcolor: "#482daa",
         image: isMobile ? gallery : hero,
+      },
+      {
+        title: "Forever",
+        link: "https://forever-sandy-one.vercel.app",
+        bgcolor: "#d2628f",
+        image: isMobile ? gallery : Forever,
       },
     ],
     [isMobile],
   );
 
-  // ✅ 
+
   const { scrollYProgress } = useScroll({
     target: sceneRef,
     offset: ["start start", "end end"],
   });
 
-  // ✅ 
+  
   const thresholds = project.map((_, i) => (i + 1) / project.length);
 
   const [activeIndex, setActiveIndex] = useState(0);
 
-  // 
+  
   useMotionValueEvent(scrollYProgress, "change", (v) => {
     const idx = thresholds.findIndex((t) => v <= t);
     setActiveIndex(idx === -1 ? thresholds.length - 1 : idx);
