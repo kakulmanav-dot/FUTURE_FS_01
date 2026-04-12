@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useState, useRef } from "react";
 import header_img from "../assets/header_img.png";
 import hero from "../assets/hero3.png";
 import Forever from "../assets/Forvever.png";
+import about from "../assets/about_img.png";
 import project_img_2 from "../assets/project_img_2.jpg";
 import { useMotionValueEvent, useScroll } from "framer-motion";
 import gallery from "../assets/gallery-3.png";
@@ -48,7 +49,7 @@ function Project() {
         title: "Forever",
         link: "https://forever-sandy-one.vercel.app",
         bgcolor: "#d2628f",
-        image: isMobile ? gallery : Forever,
+        image: isMobile ? about : Forever,
       },
     ],
     [isMobile],

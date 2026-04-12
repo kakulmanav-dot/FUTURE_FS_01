@@ -15,11 +15,11 @@ function About() {
 
       {/* Main Content */}
       <div className="relative z-50 flex sm:flex-row flex-col items-center sm:items-start w-full justify-center gap-7 p-10 sm:p-30">
-        <div className="w-2/3 sm:w-40">
+        <div className="w-full sm:w-40">
           <motion.img
             src={myImage}
             alt=""
-            className="overflow-hidden  rounded sm:rounded object-cover w-100 sm:w-full h-120 sm:h-60 p-5 sm:p-0"
+            className="sm:overflow-hidden  rounded sm:rounded object-cover w-full sm:w-full h-120 sm:h-60 p-5 sm:p-0"
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 400, damping: 10 }}
           />
